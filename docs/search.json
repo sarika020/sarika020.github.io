@@ -1,16 +1,51 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "About this site"
+    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nYour Name\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Milestone 2",
+    "title": "Sarika Tasnim",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Hi, I’m Sarika, an engineer turned data enthusiast. I grew up in Bangladesh and studied Electrical and Computer Systems Engineering. Before MDS, I spent for three years as an engineer and process analyst before deciding to go all in on data science. Now I’m here to build the technical depth I need to keep doing that work — and do it better.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Orientation day on campus.\n\n\nMDS gave us a genuinely warm welcome. Over a few sessions, I got to meet my faculty and classmates, and the standout moment was easily the campus goose chase — a mix of fun and practicality, since it doubled as a way to explore campus (and I walked away with a free MDS backpack). The final day brought everything together with an alumni panel and a dinner that capped off three memorable days.\nJumping into actual lectures after four years away felt strange at first — everything was new again, and the sudden wave of labs and assignments made the week feel a bit overwhelming. But as the days went on, I found my footing. By the time the week wrapped up, I’d worked through most of the deliverables, and what started as chaos had settled into something a lot more manageable.\nLooking back, the nerves from week one have mostly faded into cautious confidence. I still have a lot to learn, but I’m starting to trust that I can keep up — and I’m genuinely excited for what’s next."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I grew up in Bangladesh and studied Electrical and Computer Systems Engineering at Monash University Malaysia. My first real exposure to data came at British American Tobacco Bangladesh, where I spent over two and a half years as an engineer working on industrial analytics — including projects that used real-time machine data to predict equipment failures before they happened. I later spent six months at Robi Axiata, which gave me a different lens on how data drives decisions outside of manufacturing, before I decided it was time to formalize what I’d been learning on the job."
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About",
+    "section": "",
+    "text": "I grew up in Bangladesh and studied Electrical and Computer Systems Engineering at Monash University Malaysia. My first real exposure to data came at British American Tobacco Bangladesh, where I spent over two and a half years as an engineer working on industrial analytics — including projects that used real-time machine data to predict equipment failures before they happened. I later spent six months at Robi Axiata, which gave me a different lens on how data drives decisions outside of manufacturing, before I decided it was time to formalize what I’d been learning on the job."
+  },
+  {
+    "objectID": "about.html#why-data-science",
+    "href": "about.html#why-data-science",
+    "title": "About",
+    "section": "Why data science",
+    "text": "Why data science\nEvery role and experience I’ve had has circled back to the same realization: data holds the answers, but only if you know how to ask it the right questions. At BAT and Robi, I was constantly working with real data but often relying on intuition to fill the gaps I didn’t have the technical skills to close. MDS is how I’m closing them. I want to understand not just how to analyze data, but how organizations actually use it to transform the way they operate — and I want to be someone who can help drive that shift, not just watch it happen."
+  },
+  {
+    "objectID": "about.html#outside-of-data-science",
+    "href": "about.html#outside-of-data-science",
+    "title": "About",
+    "section": "Outside of data science",
+    "text": "Outside of data science\nOutside of code and coursework, I’m usually planning my next trip. I love traveling and immersing myself in new cultures — it’s the same curiosity that drew me to data, just pointed somewhere more scenic. I also love a good concert or festival, and most weekends you’ll find me at one, or catching up with friends over good food.\nAbout this site"
   }
 ]
