@@ -2,4 +2,18 @@
 title: "About"
 ---
 
+## Background
+
+I grew up in Bangladesh and studied Electrical and Computer Systems Engineering at Monash University Malaysia. My first real exposure to data came at British American Tobacco Bangladesh, where I spent over two and a half years as an engineer working on industrial analytics — including projects that used real-time machine data to predict equipment failures before they happened. I later spent six months at Robi Axiata, which gave me a different lens on how data drives decisions outside of manufacturing, before I decided it was time to formalize what I'd been learning on the job.
+
+## Why data science
+
+Every role and experience I've had has circled back to the same realization: data holds the answers, but only if you know how to ask it the right questions. At BAT and Robi, I was constantly working with real data but often relying on intuition to fill the gaps I didn't have the technical skills to close. MDS is how I'm closing them. I want to understand not just how to analyze data, but how organizations actually use it to transform the way they operate — and I want to be someone who can help drive that shift, not just watch it happen.
+
+## Outside of data science
+
+Outside of code and coursework, I'm usually planning my next trip. I love traveling and immersing myself in new cultures — it's the same curiosity that drew me to data, just pointed somewhere more scenic. I also love a good concert or festival, and most weekends you'll find me at one, or catching up with friends over good food.
+
+
+
 About this site

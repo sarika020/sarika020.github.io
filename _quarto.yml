@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Milestone 2"
+  title: "Sarika Tasnim"
   navbar:
     left:
       - href: index.qmd
