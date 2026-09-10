@@ -7,7 +7,7 @@ about:
   image: images/profile.jpg
 ---
 
-Hi, I'm Sarika, an engineer turned data enthusiast. I grew up in Bangladesh and studied Electrical and Computer Systems Engineering. Before MDS, I spent for three years as an engineer and process analyst before deciding to go all in on data science. Now I'm here to build the technical depth I need to keep doing that work — and do it better.
+Hi, I'm Sarika, an engineer turned data enthusiast. I grew up in Bangladesh and studied Electrical and Computer Systems Engineering. Before MDS, I spent around three years working as an engineer and process analyst before deciding to go all in on data science. Now I'm here to build the technical depth I need to keep doing that work — and do it better.
 
 
 
