@@ -11,6 +11,3 @@ Hi, I'm Sarika, an engineer turned data enthusiast. I grew up in Bangladesh and 
 
 
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
