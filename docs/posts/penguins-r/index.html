@@ -224,7 +224,7 @@ Table&nbsp;1: The original dataset
 </div>
 </figure>
 </div>
-<p>Next, I summarise flipper length for each species.</p>
+<p>Next, I group the data by ‘species’ and summarise the mean, mininum and maximum flipper length for each species as well as the count for penguins in each species.Then sort the data in a descending order.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>penguins_clean <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
@@ -283,6 +283,7 @@ Table&nbsp;2: Flipper length (mm) by species.
 </div>
 </div>
 <p>Finally, I compare flipper length across species with a boxplot.</p>
+<p>This makes a boxplot with one box per species, showing how flipper length is spread out within each species. Each box is filled with a different colour by species, the axes are labelled “Species” and “Flipper length (mm)”, and the legend is hidden because the species names already appear on the x-axis.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins_clean, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>

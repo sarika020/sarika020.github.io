@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Data: <a href="https://allisonhorst.github.io/palmerpenguins/">Palmer Penguins</a>, Palmer Station Antarctica LTER.</p>
 <p>In this post I compare the body mass of three penguin species using pandas.</p>
-<div id="7c480b47" class="cell" data-execution_count="1">
+<div id="b54a77ce" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -294,7 +294,7 @@ Table&nbsp;1: The load_penguins dataset
 </figure>
 </div>
 </div>
-<p>Next, I compare the average body mass of each species.</p>
+<p>Next, I compare the average body mass of each species. This code groups the penguins by species, calculates the average body mass for each one, rounds it to one decimal place, and sorts them from heaviest to lightest. reset_index() turns species back into a regular column so the result displays as a proper table, and the last line shows that table on the page.</p>
 <div class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_mass <span class="op">=</span> penguins.groupby(<span class="st">"species"</span>)[<span class="st">"body_mass_g"</span>].mean().<span class="bu">round</span>(<span class="dv">1</span>).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>avg_mass <span class="op">=</span> avg_mass.reset_index()</span>
