@@ -27,7 +27,7 @@ penguins_clean <- penguins |> na.omit()
 head(penguins_clean)
 ```
 
-Next, I summarise flipper length for each species.
+Next, I group the data by 'species' and summarise the mean, mininum and maximum flipper length for each species as well as the count for penguins in each species.Then sort the data in a descending order. 
 
 ```{r}
 #| label: tbl-flipper
@@ -45,6 +45,9 @@ penguins_clean |>
 ```
 
 Finally, I compare flipper length across species with a boxplot.
+
+This makes a boxplot with one box per species, showing how flipper length is spread out within each species. Each box is filled with a different colour by species, the axes are labelled "Species" and "Flipper length (mm)", and the legend is hidden because the species names already appear on the x-axis.
+
 
 ```{r}
 #| label: fig-flipper-species

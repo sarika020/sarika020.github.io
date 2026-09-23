@@ -24,6 +24,7 @@ penguins.head()
 ```
 
 Next, I compare the average body mass of each species.
+This code groups the penguins by species, calculates the average body mass for each one, rounds it to one decimal place, and sorts them from heaviest to lightest. reset_index() turns species back into a regular column so the result displays as a proper table, and the last line shows that table on the page.
 
 ```{python}
 #| label: tbl-mass
