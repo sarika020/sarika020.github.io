@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Penguin Body Mass by Species (Python)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nSarika Tasnim\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nSarika Tasnim\n\n\n\n\n\nNo matching items"
+    "text": "Flipper Length by Species (R)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nSarika Tasnim\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin Body Mass by Species (Python)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nSarika Tasnim\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nSarika Tasnim\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,11 +14,25 @@
     "text": "Hi, I’m Sarika, an engineer turned data enthusiast. I grew up in Bangladesh and studied Electrical and Computer Systems Engineering. Before MDS, I spent around three years working as an engineer and process analyst before deciding to go all in on data science. Now I’m here to build the technical depth I need to keep doing that work — and do it better."
   },
   {
+    "objectID": "posts/penguins-r/index.html",
+    "href": "posts/penguins-r/index.html",
+    "title": "Flipper Length by Species (R)",
+    "section": "",
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER.\nIn this post I compare flipper length across penguin species.\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(knitr)\n\nFirst, I remove rows with missing values.\n\n\n\nTable 1: The original dataset\n\n\npenguins_clean &lt;- penguins |&gt; na.omit()\nhead(penguins_clean)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           36.7          19.3               193        3450\n5 Adelie  Torgersen           39.3          20.6               190        3650\n6 Adelie  Torgersen           38.9          17.8               181        3625\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nNext, I summarise flipper length for each species.\n\npenguins_clean |&gt;\n  group_by(species) |&gt;\n  summarise(\n    mean_flipper = mean(flipper_length_mm),\n    min_flipper = min(flipper_length_mm),\n    max_flipper = max(flipper_length_mm),\n    count = n()\n  ) |&gt;\n  arrange(desc(mean_flipper)) |&gt;\n  kable(digits = 1)\n\n\n\nTable 2: Flipper length (mm) by species.\n\n\n\n\n\n\nspecies\nmean_flipper\nmin_flipper\nmax_flipper\ncount\n\n\n\n\nGentoo\n217.2\n203\n231\n119\n\n\nChinstrap\n195.8\n178\n212\n68\n\n\nAdelie\n190.1\n172\n210\n146\n\n\n\n\n\n\n\n\nFinally, I compare flipper length across species with a boxplot.\n\nggplot(penguins_clean, aes(x = species, y = flipper_length_mm, fill = species)) +\n  geom_boxplot() +\n  labs(x = \"Species\", y = \"Flipper length (mm)\") +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\nFigure 1: Flipper length by species.\n\n\n\n\n\nGentoo penguins have the longest flippers, while Adelie penguins have the shortest."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
     "section": "",
     "text": "Orientation day on campus.\n\n\nMDS gave us a genuinely warm welcome. Over a few sessions, I got to meet my faculty and classmates, and the standout moment was easily the campus goose chase — a mix of fun and practicality, since it doubled as a way to explore campus (and I walked away with a free MDS backpack). The final day brought everything together with an alumni panel and a dinner that capped off three memorable days.\nJumping into actual lectures after four years away felt strange at first — everything was new again, and the sudden wave of labs and assignments made the week feel a bit overwhelming. But as the days went on, I found my footing. By the time the week wrapped up, I’d worked through most of the deliverables, and what started as chaos had settled into something a lot more manageable.\nLooking back, the nerves from week one have mostly faded into cautious confidence. I still have a lot to learn, but I’m starting to trust that I can keep up — and I’m genuinely excited for what’s next."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html",
+    "href": "posts/penguins-python/index.html",
+    "title": "Penguin Body Mass by Species (Python)",
+    "section": "",
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER.\nIn this post I compare the body mass of three penguin species using pandas.\n\nimport pandas as pd\nfrom palmerpenguins import load_penguins\n\nFirst, I load the data and remove rows with missing values.\n\npenguins = load_penguins().dropna()\npenguins.head()\n\n\n\nTable 1: The load_penguins dataset\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007\n\n\n\n\n\n\n\n\n\n\nNext, I compare the average body mass of each species.\n\navg_mass = penguins.groupby(\"species\")[\"body_mass_g\"].mean().round(1).sort_values(ascending=False)\navg_mass = avg_mass.reset_index()\navg_mass\n\n\n\nTable 2: Average body mass (g) by species.\n\n\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n0\nGentoo\n5092.4\n\n\n1\nChinstrap\n3733.1\n\n\n2\nAdelie\n3706.2\n\n\n\n\n\n\n\n\n\n\nFinally, I count how many penguins of each species live on each island.\n\npd.crosstab(penguins[\"species\"], penguins[\"island\"])\n\n\n\nTable 3: Count of penguins in each islands\n\n\n\n\n\n\n\n\n\nisland\nBiscoe\nDream\nTorgersen\n\n\nspecies\n\n\n\n\n\n\n\nAdelie\n44\n55\n47\n\n\nChinstrap\n0\n68\n0\n\n\nGentoo\n119\n0\n0\n\n\n\n\n\n\n\n\n\n\nGentoo penguins are the heaviest on average, and they only appear on Biscoe island."
   },
   {
     "objectID": "about.html",
@@ -47,12 +61,5 @@
     "title": "About",
     "section": "Outside of data science",
     "text": "Outside of data science\nOutside of code and coursework, I’m usually planning my next trip. I love traveling and immersing myself in new cultures — it’s the same curiosity that drew me to data, just pointed somewhere more scenic. I also love a good concert or festival, and most weekends you’ll find me at one, or catching up with friends over good food."
-  },
-  {
-    "objectID": "posts/penguins-python/index.html",
-    "href": "posts/penguins-python/index.html",
-    "title": "Penguin Body Mass by Species (Python)",
-    "section": "",
-    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER.\nIn this post I compare the body mass of three penguin species using pandas.\n\nimport pandas as pd\nfrom palmerpenguins import load_penguins\n\nFirst, I load the data and remove rows with missing values.\n\npenguins = load_penguins().dropna()\npenguins.head()\n\n\n\nTable 1: The load_penguins dataset\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007\n\n\n\n\n\n\n\n\n\n\nNext, I compare the average body mass of each species.\n\navg_mass = penguins.groupby(\"species\")[\"body_mass_g\"].mean().round(1).sort_values(ascending=False)\navg_mass = avg_mass.reset_index()\navg_mass\n\n\n\nTable 2: Average body mass (g) by species.\n\n\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n0\nGentoo\n5092.4\n\n\n1\nChinstrap\n3733.1\n\n\n2\nAdelie\n3706.2\n\n\n\n\n\n\n\n\n\n\nFinally, I count how many penguins of each species live on each island.\n\npd.crosstab(penguins[\"species\"], penguins[\"island\"])\n\n\n\nTable 3: Count of penguins in each islands\n\n\n\n\n\n\n\n\n\nisland\nBiscoe\nDream\nTorgersen\n\n\nspecies\n\n\n\n\n\n\n\nAdelie\n44\n55\n47\n\n\nChinstrap\n0\n68\n0\n\n\nGentoo\n119\n0\n0\n\n\n\n\n\n\n\n\n\n\nGentoo penguins are the heaviest on average, and they only appear on Biscoe island."
   }
 ]

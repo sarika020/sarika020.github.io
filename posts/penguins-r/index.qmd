@@ -1,0 +1,59 @@
+---
+title: "Flipper Length by Species (R)"
+author: "Sarika Tasnim"
+date: "2026-09-23"
+---
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
+
+In this post I compare flipper length across penguin species.
+
+```{r}
+#| message: false
+#| warning: false
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+```
+
+First, I remove rows with missing values.
+
+```{r}
+#| label: tbl-data
+#| tbl-cap: "The original dataset"
+penguins_clean <- penguins |> na.omit()
+head(penguins_clean)
+```
+
+Next, I summarise flipper length for each species.
+
+```{r}
+#| label: tbl-flipper
+#| tbl-cap: "Flipper length (mm) by species."
+penguins_clean |>
+  group_by(species) |>
+  summarise(
+    mean_flipper = mean(flipper_length_mm),
+    min_flipper = min(flipper_length_mm),
+    max_flipper = max(flipper_length_mm),
+    count = n()
+  ) |>
+  arrange(desc(mean_flipper)) |>
+  kable(digits = 1)
+```
+
+Finally, I compare flipper length across species with a boxplot.
+
+```{r}
+#| label: fig-flipper-species
+#| fig-cap: "Flipper length by species."
+ggplot(penguins_clean, aes(x = species, y = flipper_length_mm, fill = species)) +
+  geom_boxplot() +
+  labs(x = "Species", y = "Flipper length (mm)") +
+  theme(legend.position = "none")
+```
+
+Gentoo penguins have the longest flippers, while Adelie penguins
+have the shortest.
