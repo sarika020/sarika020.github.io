@@ -1,0 +1,45 @@
+---
+title: "Penguin Body Mass by Species (Python)"
+author: "Sarika Tasnim"
+date: "2026-09-23"
+---
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
+
+In this post I compare the body mass of three penguin species using pandas.
+
+```{python}
+import pandas as pd
+from palmerpenguins import load_penguins
+```
+
+First, I load the data and remove rows with missing values.
+
+```{python}
+#| label: tbl-data
+#| tbl-cap: "The load_penguins dataset"
+penguins = load_penguins().dropna()
+penguins.head()
+```
+
+Next, I compare the average body mass of each species.
+
+```{python}
+#| label: tbl-mass
+#| tbl-cap: "Average body mass (g) by species."
+avg_mass = penguins.groupby("species")["body_mass_g"].mean().round(1).sort_values(ascending=False)
+avg_mass = avg_mass.reset_index()
+avg_mass
+```
+
+Finally, I count how many penguins of each species live on each island.
+
+```{python}
+#| label: tbl-count
+#| tbl-cap: "Count of penguins in each islands"
+pd.crosstab(penguins["species"], penguins["island"])
+```
+
+Gentoo penguins are the heaviest on average, and they only appear
+on Biscoe island.

@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nSarika Tasnim\n\n\n\n\n\nNo matching items"
+    "text": "Penguin Body Mass by Species (Python)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nSarika Tasnim\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nSarika Tasnim\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -47,5 +47,12 @@
     "title": "About",
     "section": "Outside of data science",
     "text": "Outside of data science\nOutside of code and coursework, I’m usually planning my next trip. I love traveling and immersing myself in new cultures — it’s the same curiosity that drew me to data, just pointed somewhere more scenic. I also love a good concert or festival, and most weekends you’ll find me at one, or catching up with friends over good food."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html",
+    "href": "posts/penguins-python/index.html",
+    "title": "Penguin Body Mass by Species (Python)",
+    "section": "",
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER.\nIn this post I compare the body mass of three penguin species using pandas.\n\nimport pandas as pd\nfrom palmerpenguins import load_penguins\n\nFirst, I load the data and remove rows with missing values.\n\npenguins = load_penguins().dropna()\npenguins.head()\n\n\n\nTable 1: The load_penguins dataset\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007\n\n\n\n\n\n\n\n\n\n\nNext, I compare the average body mass of each species.\n\navg_mass = penguins.groupby(\"species\")[\"body_mass_g\"].mean().round(1).sort_values(ascending=False)\navg_mass = avg_mass.reset_index()\navg_mass\n\n\n\nTable 2: Average body mass (g) by species.\n\n\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n0\nGentoo\n5092.4\n\n\n1\nChinstrap\n3733.1\n\n\n2\nAdelie\n3706.2\n\n\n\n\n\n\n\n\n\n\nFinally, I count how many penguins of each species live on each island.\n\npd.crosstab(penguins[\"species\"], penguins[\"island\"])\n\n\n\nTable 3: Count of penguins in each islands\n\n\n\n\n\n\n\n\n\nisland\nBiscoe\nDream\nTorgersen\n\n\nspecies\n\n\n\n\n\n\n\nAdelie\n44\n55\n47\n\n\nChinstrap\n0\n68\n0\n\n\nGentoo\n119\n0\n0\n\n\n\n\n\n\n\n\n\n\nGentoo penguins are the heaviest on average, and they only appear on Biscoe island."
   }
 ]
